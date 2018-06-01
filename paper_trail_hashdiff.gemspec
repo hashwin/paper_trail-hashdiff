@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'paper_trail_hashdiff'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.date        = '2018-06-01'
   s.summary     = 'Paper Trail Hashdiff'
   s.description = 'Allows storing only incremental changes in the object_changes column'
@@ -12,6 +12,6 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/hashwin/paper_trail_hashdiff'
   s.license = 'MIT'
 
-  s.add_runtime_dependency 'hashdiff'
-  s.add_development_dependency 'rubocop'
+  s.add_runtime_dependency 'hashdiff', '~> 0.3'
+  s.add_development_dependency 'rubocop', '~> 0.56'
 end
