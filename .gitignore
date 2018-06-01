@@ -1,0 +1,24 @@
+*.gem
+*.rbc
+*.sassc
+.bundle
+.config
+.yardoc
+.rvmrc
+.rspec
+.sass-cache
+.DS_Store
+Gemfile.lock # gem projects only!
+InstalledFiles
+_yardoc
+doc/
+coverage
+lib/bundler/man
+capybara-*.html
+pkg
+rdoc
+spec/reports
+spec/tmp
+test/tmp
+test/version_tmp
+tmp
