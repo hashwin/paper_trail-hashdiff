@@ -14,7 +14,7 @@ class PaperTrailHashDiff
   def where_object_changes(version_model_class, attributes)
     scope = version_model_class
     attributes.each do |k, v|
-      scope = scope.where("(((object_changes -> ?)::jsonb ->> 0)::jsonb @> ?)", k.to_s, v.to_s)
+      scope = scope.where('(((object_changes -> ?)::jsonb ->> 0)::jsonb @> ?)', k.to_s, v.to_s)
     end
     scope
   end
