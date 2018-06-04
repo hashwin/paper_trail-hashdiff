@@ -11,7 +11,7 @@ Add the gem 'paper_trail-hashdiff' to your Gemfile.
 
 In your paper_trail.rb initializer, add the following line:
 ```ruby
-PaperTrail.object_changes_adapter = PaperTrailHashDiff.new
+PaperTrail.config.object_changes_adapter = PaperTrailHashDiff.new
 ```
 
 ## Storage format
