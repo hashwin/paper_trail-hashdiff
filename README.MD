@@ -1,11 +1,13 @@
 # PaperTrail HashDiff Adapter
 
-Adapter for the popular versioning/auditing tool PaperTrail (https://github.com/paper-trail-gem/paper_trail)
+Adapter for the popular versioning/auditing tool [PaperTrail](https://github.com/paper-trail-gem/paper_trail)
 This gem allows you to store only incremental changes in the object_changes column.
 This is especially useful when you are storing hashes in a json/b column and would like to track changes for each key.
-Uses HashDiff (https://github.com/liufengyun/hashdiff)
+Uses [HashDiff](https://github.com/liufengyun/hashdiff)
 
 ## Usage
+
+Add the gem 'paper_trail-hashdiff' to your Gemfile.
 
 In your paper_trail.rb initializer, add the following line:
 ```ruby
