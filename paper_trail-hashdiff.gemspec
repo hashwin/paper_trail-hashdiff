@@ -12,6 +12,6 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/hashwin/paper_trail-hashdiff'
   s.license = 'MIT'
 
-  s.add_runtime_dependency 'hashdiff', '~> 0.3'
-  s.add_development_dependency 'rubocop', '~> 0.56'
+  s.add_runtime_dependency 'hashdiff', '~> 1.0'
+  s.add_development_dependency 'rubocop', '~> 0.77'
 end
