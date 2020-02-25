@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paper_trail-hashdiff (0.0.5)
+    paper_trail-hashdiff (0.0.6)
       hashdiff (~> 1.0)
 
 GEM
