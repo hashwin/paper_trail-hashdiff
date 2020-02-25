@@ -6,7 +6,7 @@ class PaperTrailHashDiff
   def diff(changes)
     diff_changes = {}
     changes.each do |field, value_changes|
-      diff_changes[field] = HashDiff.diff(value_changes[0], value_changes[1], array_path: true)
+      diff_changes[field] = Hashdiff.diff(value_changes[0], value_changes[1], array_path: true)
     end
     diff_changes
   end
