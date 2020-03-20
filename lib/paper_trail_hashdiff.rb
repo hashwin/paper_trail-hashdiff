@@ -3,10 +3,24 @@
 # Allows storing only incremental changes in the object_changes column
 # Uses HashDiff (https://github.com/liufengyun/hashdiff)
 class PaperTrailHashDiff
+  attr_reader :only_objects
+
+  def initialize(only_objects: false)
+    @only_objects = only_objects
+  end
+
   def diff(changes)
     diff_changes = {}
     changes.each do |field, value_changes|
-      diff_changes[field] = Hashdiff.diff(value_changes[0], value_changes[1], array_path: true)
+      if (
+        !only_objects ||
+        (value_changes[0] && (value_changes[0].is_a?(Hash) || value_changes[0].is_a?(Array))) ||
+        (value_changes[1] && (value_changes[1].is_a?(Hash) || value_changes[1].is_a?(Array)))
+      )
+        diff_changes[field] = Hashdiff.diff(value_changes[0], value_changes[1], array_path: true)
+      else
+        diff_changes[field] = value_changes
+      end
     end
     diff_changes
   end
