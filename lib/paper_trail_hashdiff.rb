@@ -13,9 +13,10 @@ class PaperTrailHashDiff
     diff_changes = {}
     changes.each do |field, value_changes|
       if (
-        !only_objects ||
-        (value_changes[0] && (value_changes[0].is_a?(Hash) || value_changes[0].is_a?(Array))) ||
-        (value_changes[1] && (value_changes[1].is_a?(Hash) || value_changes[1].is_a?(Array)))
+        !only_objects || (
+          value_changes[0] && value_changes[1] &&
+          (value_changes[0].is_a?(Hash) || value_changes[0].is_a?(Array))
+        )
       )
         diff_changes[field] = Hashdiff.diff(value_changes[0], value_changes[1], array_path: true)
       else
