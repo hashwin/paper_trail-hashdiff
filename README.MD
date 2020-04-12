@@ -9,10 +9,17 @@ Uses [HashDiff](https://github.com/liufengyun/hashdiff)
 
 Add the gem 'paper_trail-hashdiff' to your Gemfile.
 
-In your paper_trail.rb initializer, add the following line:
+In your paper_trail.rb initializer, add the following:
 ```ruby
+require 'paper_trail_hashdiff'
 PaperTrail.config.object_changes_adapter = PaperTrailHashDiff.new
 ```
+
+Additionally, if you want to limit storing these changes for only object columns (eg. json hashes or arrays) and skip primitives, you can use the "only_objects" option when initializing:
+```ruby
+PaperTrail.config.object_changes_adapter = PaperTrailHashDiff.new(only_objects: true)
+```
+Note: With this option, the ```where_object_changes``` method from PT may not work properly.
 
 ## Storage format
 
