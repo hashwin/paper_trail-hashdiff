@@ -12,16 +12,15 @@ class PaperTrailHashDiff
   def diff(changes)
     diff_changes = {}
     changes.each do |field, value_changes|
-      if(
-        !only_objects || (
+      diff_changes[field] =
+        if !only_objects || (
           value_changes[0] && value_changes[1] &&
           (value_changes[0].is_a?(Hash) || value_changes[0].is_a?(Array))
         )
-      )
-        diff_changes[field] = Hashdiff.diff(value_changes[0], value_changes[1], array_path: true, use_lcs: false),
-      else
-        diff_changes[field] = value_changes
-      end
+          Hashdiff.diff(value_changes[0], value_changes[1], array_path: true, use_lcs: false)
+        else
+          value_changes
+        end
     end
     diff_changes
   end
