@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'paper_trail-hashdiff'
-  s.version     = '0.1.1'
+  s.version     = '0.1.2'
   s.date        = '2018-06-04'
   s.summary     = 'Paper Trail Hashdiff'
   s.description = 'Allows storing only incremental changes in the object_changes column'
